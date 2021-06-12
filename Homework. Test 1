@@ -1,0 +1,19 @@
+describe('first home task', () => {
+    
+    it('should open webbdriverio page', async () => {
+        await browser.setWindowSize(1920, 1080);
+        
+        await browser.url('https://webdriver.io');
+    });
+
+    it('should redirect to API clicking API button located on top of navbar', async () => {
+        const getApiButton = await $('a[href*=api]')
+        await getApiButton.click()
+    });
+
+    it('should show current api', async () => {
+        const currentURL = await browser.getUrl();
+        console.log('Current url is:' + currentURL);
+    });
+
+ });
