@@ -1,0 +1,34 @@
+describe('first home task', () => {
+    
+    it('should open webdriverio page', async () => {
+        await browser.setWindowSize(1920, 1080);
+        await browser.url('https://webdriver.io');
+    });
+
+    it('should redirect to API clicking API button located on top of navbar', async () => {
+        const getApiButton = await $('a[href*=api]')
+        await getApiButton.click()
+    });
+
+    it('should show current api', async () => {
+        const currentURL = await browser.getUrl();
+        console.log('Current url is:' + currentURL);
+    });
+    it('should get the title of API page', async() => {
+        const getApiTitle = await $('header > h1')
+        const getApiTitleText = await getApiTitle.getText()
+        console.log('The value of Api Title is:' + getApiTitleText)
+    });
+    it('should get href value of JSON Wire Protocol link', async () => {
+        const getHrefElement = await $('a[href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol"]')
+        const getAttrValue = await getHrefElement.getAttribute('href')
+        console.log('href value of JSON Wire Protocol is:' + getAttrValue)
+    });
+    it('should print TEST IS DONE value in search field', async () => {
+        const getFirstSearchField = await $('span.DocSearch-Button-Placeholder')
+        const showPopupSearchField = await getFirstSearchField.click()
+        const getPopupSearchFieldElem = await $('#docsearch-input')
+        const addValueInPopupInputField = getPopupSearchFieldElem.addValue('TEST IS DONE!')
+        await browser.pause(5000)
+    });
+ });
