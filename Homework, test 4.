@@ -1,0 +1,48 @@
+Project: Githud
+TEST CASE ID 1. User registration with correct data. 
+Preconditions: https://github.com opened
+Steps: 
+1. Click on "Sign up" button.
+2. Fill "Username" field with data "User"
+3. Fill "Email" adress with data "myuser@gmail.com"
+4. Fill "Password" field with data "Password"
+5. Verify your accout - click on "Проверить" button and solve specific test to сonfirm you are human. 
+6. Click button "Create account". 
+Expected result: 
+Redirected to https://github.com/Login123 homepage. New user created. The account conformation letter sent to appropriate email adres.
+
+TEST CASE ID 1.1. User registration with incorrect data.
+Preconditions: https://github.com opened.
+Steps:
+1. Click on "Sign up" button.
+2. Don't fill "Username", "Email adress" and "Password" field.
+3. Click "Create account" button. 
+Expected result: 
+"Create account" button is not clickable. 
+4. Check field's validation - fill "Username", "Email", "Password" fields with incorrect data "1", "@", "-" etc.
+Expected result: 
+Error messages. Input fields have red borders. "Create account" button is not clickable. User stayed the same URL.
+
+
+Project: Github
+TEST CASE ID 2. Login with correct credentials.
+Preconditions: https://github.com/login opened, new user registration completed succesfully
+Steps: 
+1. Fill "Username or email adress" field with data "User"
+2. Fill "Password" field with data "password"
+3. Click "Sign in" button. 
+Expected result: 
+Redirected to https://github.com/Login123 and have acces to determined functionality.
+
+
+Project: Github
+TEST CASE ID 2.1. Login with incorrect credentials.
+Preconditions: https://github.com/login opened
+Steps: 
+1. Fill "Username or email adress", "Password" fields with incorrect data "&", "4", "." etc.
+3. Click "Sign in" button. 
+Expected result: 
+Not redirected. User current URL - https://github.com/login. Error message "Incorrect username or password" appeared in red border table. 
+
+
+
