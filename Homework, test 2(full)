@@ -1,0 +1,81 @@
+describe('second home task', () => {
+    
+    it('should open webdriverio page', async () => {
+        await browser.setWindowSize(1920, 1080);
+        await browser.url('https://webdriver.io');
+    });
+
+    it('should open API page, get JSON Wire Protocol refference and open it in a new tab', async () => {
+        const getApiButton = await $('a[href*=api]')
+        await getApiButton.click()
+        const getHrefAttr = await $('a[href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol"]')
+        const getAttrValue = await getHrefAttr.getAttribute('href')
+        await browser.newWindow(getAttrValue) //switched to new tab automatically
+        await browser.pause(1000)
+    });
+
+    it('should check that the element with strong property is displayed', async () => {
+        const getStrongElement = await $('li.Box-row:nth-child(1) strong:nth-child(1) > a.d-block')
+        const strongElemIsDisplayed = await getStrongElement.isDisplayed()
+        console.log('Is strong element displayed?:' + strongElemIsDisplayed)
+    });
+
+    it('should switch back to API page', async () => {
+         await browser.switchWindow('https://webdriver.io/docs/api')
+         await browser.pause(1000)
+    });
+
+    it('should wait until text of title element will appear equal to Introduction and make screenshoot of it', async () => {
+        browser.waitUntil(
+        () => $('header > h1').getText() === 'Introduction',
+        {
+            timeout: 2000,
+            timeoutMsg: 'expected text to be Introduction'
+        }
+        );
+
+        browser.pause(2000)   
+        browser.saveScreenshot('./test/Screenshots/pageview.png'); //скриншот не сохраняется
+    });
+    
+    it('should log in console the boolean - is twitter item displayed', async () => {
+        const getTwitterItem = await $('div.col:nth-child(2) li.footer__item:nth-child(4) > a');
+        const isItemDisplayed = await getTwitterItem.isDisplayed();
+        console.log('is twitter item displayed?:' + isItemDisplayed); 
+    });
+
+    it('should log in console - is twitter item displayed in viewport', async () => {
+        const getTwitterItemAgain = await $('div.col:nth-child(2) li.footer__item:nth-child(4) > a');
+        const isTwitterItemDisplayedInViewport = await getTwitterItemAgain.isDisplayedInViewport();
+        console.log('Is twitter item displayed in viewport?:' + isTwitterItemDisplayedInViewport);
+    })
+
+    it('should scroll bottom to twitter item to make it visible in viewport ', async () => {
+        const getTwitterItemForScroll = await $('div.col:nth-child(2) li.footer__item:nth-child(4) > a');
+        const isItemDisplayedInViewportAfterScroll = await getTwitterItemForScroll.scrollIntoView();
+        console.log('Is twitter item displayed in viewport?:' + isItemDisplayedInViewportAfterScroll);
+        await browser.pause(2000)
+    })
+
+    it('should check is blog element focused', async () => {
+        const getBlogElem = await $('div.navbar__items a.navbar__item:nth-child(5)');
+        const isBlogElemFocused = await getBlogElem.isFocused();
+        console.log('Is blog element focused?:' + isBlogElemFocused);
+    });
+
+    it('should check is blog element focused after click', async () => {
+        const getBlogElemAgain = await $('div.navbar__items a.navbar__item:nth-child(5)')
+        const clickBlogElem = await getBlogElemAgain.click()
+        const getClickedBlogElem = await $('div.navbar__items a.navbar__item:nth-child(5)')
+        const isClickedBlogElemFocused = await getClickedBlogElem.isFocused()
+        console.log('Is blog element focused after click?:' + isClickedBlogElemFocused) //не выводит true
+    });
+
+       /*const getBlogElemAgain = await $('div.navbar__items a.navbar__item:nth-child(5)');
+        console.log(getBlogElemAgain.isFocused()); 
+        getBlogElemAgain.click();                           //вариант с официального сайта также не работает
+        browser.pause(1000)
+        console.log(getBlogElemAgain.isFocused());   
+        });*/ 
+    
+}); //end
