@@ -1,0 +1,35 @@
+describe('Hometask 3 - Css and xpath exampless of wedriver io page element locators')
+
+    navbar: 
+    - Docs css: .navbar__items a:nth-child(3), xpath: .//div[1]/a[2] 
+    - API css: .navbar__items a:nth-child(4), xpath: .//div[1]/a[3]
+    - Blog css: .navbar__items a:nth-child(5), xpath: .//div[1]/a[4]
+    - Contribute css: .navbar__items a:nth-child(6), xpath: .//div[1]/a[5]
+    - Community css: .navbar__items a:nth-child(7), xpath: .//div[1]/a[6]
+
+    sidebar:
+    - Introduction css: li.menu__list-item:nth-child(1) > a.menu__link--active, xpath: .//a[contains(text(),'Introduction')]
+    - Expect css: li.menu__list-item:nth-child(2) > a.menu__link--active, xpath: .//a[contains(text(),'Expect')]
+    - Protocols css: li.menu__list-item:nth-child(3) > a.menu__link.menu__link--sublist, xpath: .//a[contains(text(),'Protocols')]
+    - Browser css: li.menu__list-item:nth-child(4) > a.menu__link.menu__link--sublist, xpath: .//a[contains(text(),'browser')]
+    - Element li.menu__list-item:nth-child(5) > a.menu__link.menu__link--sublist, xpath: .//a[contains(text(),'element')]
+    - Mock li.menu__list-item:nth-child(6) > a.menu__link.menu__link--sublist, xpath: .//a[contains(text(),'mock')]
+
+    footer: 
+    - Getting started css: div.col:nth-child(1)  ul.footer__items li.footer__item:nth-child(1) > a, xpath: //footer/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]
+    - API Reference css: div.col:nth-child(1)  ul.footer__items li.footer__item:nth-child(2) > a, xpath: //footer/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]
+    - Contribute css: div.col:nth-child(1)  ul.footer__items li.footer__item:nth-child(3) > a, xpath: //footer/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]
+    - Help css: div.col:nth-child(1)  ul.footer__items li.footer__item:nth-child(4) > a, xpath: //footer/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]
+    
+    - Stack overflow css: div.col:nth-child(2)  ul.footer__items li.footer__item:nth-child(1) > a, xpath: //footer/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]
+    - Support chat css: div.col:nth-child(2)  ul.footer__items li.footer__item:nth-child(1) > a, xpath: //footer/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]
+    - Slack css: div.col:nth-child(2)  ul.footer__items li.footer__item:nth-child(2) > a, xpath: //footer/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1]
+    - Twitter css: div.col:nth-child(2)  ul.footer__items li.footer__item:nth-child(3) > a, xpath: //footer/div[1]/div[1]/div[2]/ul[1]/li[4]/a[1]
+   
+    - Tidelift subscription css: div.col:nth-child(3)  ul.footer__items li.footer__item:nth-child(1) > a, xpath: //footer/div[1]/div[1]/div[3]/ul[1]/li[1]/a[1]
+    - Donate to webdriver css: div.col:nth-child(3)  ul.footer__items li.footer__item:nth-child(2) > a, xpath:  //footer/div[1]/div[1]/div[3]/ul[1]/li[2]/a[1]
+    - Swag store css: div.col:nth-child(3)  ul.footer__items li.footer__item:nth-child(3) > a, xpath: //footer/div[1]/div[1]/div[3]/ul[1]/li[3]/a[1]
+    - Blog css: div.col:nth-child(3)  ul.footer__items li.footer__item:nth-child(4) > a, xpath: //footer/div[1]/div[1]/div[3]/ul[1]/li[4]/a[1]
+    - Github css: div.col:nth-child(3)  ul.footer__items li.footer__item:nth-child(5) > a, xpath: //footer/div[1]/div[1]/div[3]/ul[1]/li[5]/a[1]
+
+
